@@ -1,11 +1,14 @@
-export default function CardProduct() {
-  return (
-    <div className="flex items-center justify-between w-72 h-20 rounded-lg border-2 border-black border-solid p-2">
-      <div className="flex items-start justify-start flex-col h-full">
-        <h2>PRODUTO</h2>
-      </div>
+export default function CardProduct(props) {
+  const { productTitle, productSubtitle, price } = props;
 
-      <div className="w-16 h-16 rounded-md border-2 gray-[900] border-solid"></div>
+  return (
+    <div className="flex items-center justify-between w-80 h-24 rounded-lg border-2 border-black border-solid p-2 m-1">
+      <div className="flex items-start justify-start flex-col h-full">
+        <h2 className="font-bold">{productTitle}</h2>
+        <span className="text-xs text-gray-300">{productSubtitle}</span>
+        <h4 className="font-bold">R$ {price}</h4>
+      </div>
+      <div className="w-20 h-20 rounded-md border-2 border-black border-solid"></div>
     </div>
   );
 }
